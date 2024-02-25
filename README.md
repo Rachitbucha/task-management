@@ -7,7 +7,6 @@ This API provides functionality for managing tasks in a simple task management s
 - Node.js: Server-side JavaScript runtime environment.
 - Express.js: Web framework for Node.js, providing routing and middleware capabilities.
 - MongoDB: NoSQL database for storing task and user data.
-- Mongoose: MongoDB object modeling tool for Node.js, providing schema validation and query building.
 - JSON Web Tokens (JWT): Stateless authentication mechanism for securing API endpoints.
 - Express Validator: Middleware for validating and sanitizing input data in Express.js applications.
 - Bcrypt.js: Library for hashing passwords securely.
@@ -20,8 +19,39 @@ This API provides functionality for managing tasks in a simple task management s
    git clone git@github.com:rachitbucha/task-management.git
    cd task-management
 
-2. npm install
+   ```
 
-## Run Project
+2. Install dependencies
 
-- npm run start
+   ```npm install
+
+   ```
+
+3. Install and set up MongoDBMongoDb Installation
+
+   - Follow the MongoDB installation instructions:
+     https://www.mongodb.com/docs/manual/installation/
+
+4. Setting Environment Variables:
+   - copy .env.example and create .env from example
+
+5. Start the project
+   - npm run start
+
+
+## DEBUG
+
+    {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "type": "node",
+                "request": "launch",
+                "name": "Launch Program",
+                "skipFiles": [
+                    "<node_internals>/**"
+                ],
+                "program": "${workspaceFolder}/src/index.js"
+            }
+        ]
+    }
