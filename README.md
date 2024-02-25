@@ -23,9 +23,7 @@ This API provides functionality for managing tasks in a simple task management s
 
 2. Install dependencies
 
-   ```npm install
-
-   ```
+   ```npm install```
 
 3. Install and set up MongoDBMongoDb Installation
 
