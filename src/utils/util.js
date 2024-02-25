@@ -15,6 +15,7 @@ function getJwtToken(userId, email) {
 const MONGO_COLLECTION_NAME = {
   USER: "user",
   TASK: "task",
+  INVALIDATED_TOKEN: "invalidated_token",
 };
 
 const HTTP_STATUS_CODE = {

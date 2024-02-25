@@ -59,7 +59,22 @@ async function login(email, password) {
   return util.getJwtToken(user._id.toString(), user.email);
 }
 
+async function logout(req) {
+  const db = await getDatabase();
+  const insertResult = await db
+    .collection(util.MONGO_COLLECTION_NAME.INVALIDATED_TOKEN)
+    .insertOne({
+      user_id: req.user_profile.user_id,
+      token: req.headers.token,
+    });
+
+  if (!insertResult.acknowledged) {
+    throw new Error("Unable to Logout User, please try again!!!");
+  }
+}
+
 module.exports = {
   register,
   login,
+  logout,
 };
