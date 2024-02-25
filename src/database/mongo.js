@@ -30,12 +30,11 @@ async function connectToMongoDB() {
   }
 }
 
-async function getDatabase() {
+function getDatabase(databaseName) {
   try {
-    if (!client.isConnected()) {
-      await connectToMongoDB();
-    }
-    return client.db(process.env.MONGO_DB_NAME || "task_management");
+    return client.db(
+      databaseName || process.env.MONGO_DB_NAME || "task-management"
+    );
   } catch (error) {
     console.error("Error in Get Database.", error);
   }

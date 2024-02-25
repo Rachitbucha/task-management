@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const { connectToMongoDB } = require("../src/database/mongo");
+const authRoutes = require("./routes/authRoutes");
 
 //Middleware
 app.use(express.json());
@@ -13,9 +14,7 @@ app.use((err, req, res, next) => {
 });
 
 // Routes
-app.get("/", (req, res) => {
-  res.send("Hello, World!");
-});
+app.use("/api/auth", authRoutes);
 
 const port = process.env.PORT || 3000;
 
